@@ -123,8 +123,6 @@ function complexity(filePath)
 			builder.FunctionName = functionName(node);
 			builder.StartLine = node.loc.start.line;
 
-
-
 			builders[builder.FunctionName] = builder;
 			let max = 0;
 			traverseWithParents(node, function (node) {
@@ -147,7 +145,6 @@ function complexity(filePath)
 			builder.MaxConditions = max;
 			builder.SimpleCyclomaticComplexity++;
 		}
-
 	});
 
 }
@@ -224,8 +221,8 @@ function Crazy (argument)
       }
       else if ( secs > 59 && secs < 3600 )
       {
-          var mints = secs / 60;
-          var remainder = parseInt(secs.toString().split(".")[0]) -
+          const mints = secs / 60;
+          const remainder = parseInt(secs.toString().split(".")[0]) -
 (parseInt(mints.toString().split(".")[0]) * 60);
           var szmin;
           if ( mints > 1 )
